@@ -1,0 +1,1 @@
+{"name":"Local: Caybenhat_Kruskal","url":"d:\\PTIT\\TRR2\\BT\\Caybenhat_Kruskal.cpp","tests":[{"id":1748601245768,"input":"3\n0 5 1 \n5 0 3 \n1 3 0 ","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\PTIT\\TRR2\\BT\\Caybenhat_Kruskal.cpp","group":"local","local":true}

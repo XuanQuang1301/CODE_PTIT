@@ -1,0 +1,10 @@
+python -u "D:\PTIT\TRR2\Batch-informed-trees-master\python\run.py" --map_name Random --start 0 0 --goal 40 50 --samples 50 --dim 2 --stop_time 10 --vis
+
+python -u "D:\PTIT\TRR2\Batch-informed-trees-master\python\run.py" --map_name Enclosure --start 0 0 --goal 50 50 --samples 50 --dim 2 --stop_time 10 --vis
+
+
+python -u "D:\PTIT\TRR2\Batch-informed-trees-master\python\run.py" --map_name CustomMap --start 0 0 --goal 99 99 --samples 50 --dim 2 --stop_time 10 --vis
+
+python -u "D:\PTIT\TRR2\Batch-informed-trees-master\python\run.py" --map_name Wall_gap --start 0 0 --goal 20 60 --samples 50 --dim 2 --stop_time 10 --vis
+
+python -u "D:\PTIT\TRR2\Batch-informed-trees-master\python\run.py" --map_name Maze --start 0 0 --goal 60 25 --samples 50 --dim 2 --stop_time 10 --vis

@@ -1,0 +1,1 @@
+{"name":"Local: Timkiemtheochieusau-DFS","url":"d:\\CODE_PTIT\\TRR2\\Timkiemtheochieusau-DFS.cpp","tests":[{"id":1742196288063,"input":"9 9 \n1 2 \n1 3\n1 5\n2 4\n3 6\n3 7\n3 9\n5 8","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CODE_PTIT\\TRR2\\Timkiemtheochieusau-DFS.cpp","group":"local","local":true}
