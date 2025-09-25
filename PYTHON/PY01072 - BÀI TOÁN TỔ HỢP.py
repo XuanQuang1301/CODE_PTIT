@@ -12,3 +12,6 @@ arr = sorted(list({int(i) for i in input().split()}))
 n = len(arr)
 
 Try(0, [])
+
+# 8 3
+# 2 4 4 3 5 1 3 4
