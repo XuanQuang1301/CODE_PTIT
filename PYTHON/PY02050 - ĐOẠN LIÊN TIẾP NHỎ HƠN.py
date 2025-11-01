@@ -1,12 +1,12 @@
 
-for case in range(int(input())):
+t = int(input())
+for z in range(t) :
     n = int(input())
-    a = list(map(int, input().split()))
-    for i in range(n):
-        cnt = 0
-        for j in range(i, -1, -1):
-            if a[j] <= a[i]:
-                cnt += 1
-            else:
-                break
-        print(cnt, end = ' ')
+    a = [int(x) for x in input().split()]
+    st = []
+    for i in range(n) :
+        while len(st) > 0 and a[st[-1]] <= a[i] : st.pop()
+        if len(st) == 0 : print(i + 1, end = " ")
+        else : print(i - st[-1], end = " ")
+        st.append(i)
+    print()
