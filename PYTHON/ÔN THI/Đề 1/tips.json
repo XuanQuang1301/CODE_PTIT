@@ -1,0 +1,58 @@
+{
+"tips":[
+  {
+    "total_bill": 16.99,
+    "tip": 1.01,
+    "sex": "Female",
+    "smoker": "No",
+    "day": "Sun",
+    "time": "Dinner",
+    "size": 2
+  },
+  {
+    "total_bill": 10.34,
+    "tip": 1.66,
+    "sex": "Male",
+    "smoker": "No",
+    "day": "Sun",
+    "time": "Dinner",
+    "size": 3
+  },
+  {
+    "total_bill": 21.01,
+    "tip": 3.50,
+    "sex": "Male",
+    "smoker": "Yes",
+    "day": "Sun",
+    "time": "Dinner",
+    "size": 2
+  },
+  {
+    "total_bill": 23.68,
+    "tip": 3.31,
+    "sex": "Female",
+    "smoker": "No",
+    "day": "Fri",
+    "time": "Dinner",
+    "size": 4
+  },
+  {
+    "total_bill": 24.59,
+    "tip": 3.61,
+    "sex": "Male",
+    "smoker": "No",
+    "day": "Fri",
+    "time": "Dinner",
+    "size": 10
+  },
+  {
+    "total_bill": 25.29,
+    "tip": 4.71,
+    "sex": "Female",
+    "smoker": "No",
+    "day": "Sun",
+    "time": "Dinner",
+    "size": 2
+  }
+]
+}

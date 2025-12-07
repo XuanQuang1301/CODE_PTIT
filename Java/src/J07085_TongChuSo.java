@@ -2,24 +2,21 @@ import java.util.*;
 import java.io.*; 
 
 public class J07085_TongChuSo {
-    public static void main(String[] args)throws Exception{
+    public static void main(String[] args)throws IOException, FileNotFoundException, ClassNotFoundException{
         ObjectInputStream sc = new  ObjectInputStream(new FileInputStream("DATA.in")); 
         ArrayList<String> list = (ArrayList<String>) sc.readObject(); 
         sc.close();
         for(String s : list){
-            int ans = 0; 
+            String ans = ""; 
+            int sum = 0; 
             for(int i = 0; i < s.length(); i++){
-                if(Character.isDigit(s.charAt(i))){
-                    ans = ans * 10 + (s.charAt(i) - '0');
+                if(s.charAt(i) >= '0' && s.charAt(i) <= '9'){
+                    ans += s.charAt(i); 
+                    sum += (s.charAt(i) - '0'); 
                 }
             }
-            System.out.print(ans + " ");
-            int sum = 0; 
-            while(ans > 0){
-                sum += ans % 10; 
-                ans /= 10; 
-            }
-            System.out.println(sum);
+            while(ans.charAt(0) == '0') ans = ans.substring(1); 
+            System.out.println(ans + " " + sum);
         }
     }
 }
