@@ -3,7 +3,8 @@ data = sys.stdin.read().strip().split()
 t = int(data[0])
 idx = 1
 for _ in range(t):
-    n = int(data[idx]); k = int(data[idx+1])
+    n = int(data[idx])
+    k = int(data[idx+1])
     idx += 2
     a = list(map(int, data[idx:idx+n]))
     idx += n

@@ -13,7 +13,7 @@ def chuyendoi(b, s):
     return ''.join(result)
 
 
-with open('DATA.in', 'r') as f:
+with open('DATA2.in', 'r') as f:
     t = int(f.readline().strip())
     for _ in range(t):
         b = int(f.readline().strip())

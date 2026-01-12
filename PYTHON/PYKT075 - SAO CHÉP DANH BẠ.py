@@ -1,5 +1,5 @@
 contact = []
-with open("DATA.in", "r", encoding ="utf-8") as f:
+with open("DATA2.in", "r", encoding ="utf-8") as f:
     lines = [line.strip() for line in f if line.strip()]
 date = ""
 i = 0

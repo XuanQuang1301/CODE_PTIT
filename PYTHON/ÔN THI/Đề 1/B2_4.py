@@ -1,37 +1,24 @@
-def solve():
-    try:
-        # Đọc số lượng bộ test
-        t = int(input())
-    except:
-        return
 
-    for _ in range(t):
-        try:
-            s = input()
-        except:
+for case in range(int(input())):
+    s = input()
+    tmp = {}
+    ans = 0
+    for i in s:
+        tmp[i] = s.count(i)
+        ans = max(ans, tmp[i])
+    for i in s:
+        if tmp[i] == ans:
+            print(i)
             break
 
-        # Bước 1: Đếm tần suất xuất hiện của mỗi ký tự
-        counts = {}
-        for char in s:
-            if char in counts:
-                counts[char] += 1
-            else:
-                counts[char] = 1
+from collections import Counter
 
-        max_freq = 0
-        result_char = ''
+for case in range(int(input())):
+    s = input()
+    c = Counter(s)
+    ans = max(c.values())  # tần suất lớn nhất
 
-        # Bước 2: Tìm ký tự có tần suất lớn nhất
-        # Duyệt theo thứ tự xuất hiện trong chuỗi gốc để thỏa mãn điều kiện:
-        # "Nếu số lần xuất hiện bằng nhau thì in ra ký tự xuất hiện trước"
-        for char in s:
-            if counts[char] > max_freq:
-                max_freq = counts[char]
-                result_char = char
-
-        print(result_char)
-
-
-if __name__ == "__main__":
-    solve()
+    for ch in s:
+        if c[ch] == ans:
+            print(ch)
+            break

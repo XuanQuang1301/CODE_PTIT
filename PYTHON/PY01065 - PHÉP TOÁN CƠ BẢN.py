@@ -1,58 +1,39 @@
-def match(x, p):
-    """Kiểm tra số x (2 chữ số) có khớp với pattern p (dấu ? hay chữ số)"""
-    s = f"{x:02d}"
-    if len(p) != len(s):
-        return False
-    for a, b in zip(p, s):
-        if a != '?' and a != b:
-            return False
-    return True
-
-
-def solve_one(expr):
-    # Tách biểu thức
-    parts = expr.split()
-    if len(parts) != 5 or parts[3] != '=':
-        return "WRONG PROBLEM!"
-
-    A_pat, op_pat, B_pat, _, C_pat = parts
-    ops = ['+', '-', '*', '/']
-
-    for a in range(10, 100):
-        if not match(a, A_pat):
-            continue
-        for b in range(10, 100):
-            if not match(b, B_pat):
-                continue
-            for op in ops:
-                if op_pat != '?' and op_pat != op:
-                    continue
-                if op == '+':
-                    c = a + b
-                elif op == '-':
-                    c = a - b
-                elif op == '*':
-                    c = a * b
-                else:  # '/'
-                    if b == 0 or a % b != 0:
-                        continue
-                    c = a // b
-
-                if c < 10 or c > 99:
-                    continue
-                if not match(c, C_pat):
-                    continue
-                return f"{a:02d} {op} {b:02d} = {c:02d}"
-
-    return "WRONG PROBLEM!"
-
-
-def main():
-    t = int(input().strip())
-    for _ in range(t):
-        expr = input().strip()
-        print(solve_one(expr))
-
-
-if __name__ == "__main__":
-    main()
+def check(a, op, b, ans):
+    if op == '+': return a + b == ans
+    if op == '-': return a - b == ans
+    if op == '*': return a * b == ans
+    if a % b == 0: return a // b == ans
+    return False
+def genn(a):
+    ans = []
+    if a[0] == '?':
+        for i in range(1, 10):
+            ans.append(str(i) + a[1])
+    else: ans.append(a)
+    r = []
+    if a[1] == '?':
+        for i in ans:
+            for j in range(0, 10):
+                r.append(i[0] + str(j))
+    else: r = ans
+    return r
+def geno(op):
+    if op == '?':
+        return "+-&/"
+    return [op]
+def solve(s):
+    arr = s.split()
+    a = genn(arr[0])
+    op = geno(arr[1])
+    b = genn(arr[2])
+    ans = genn(arr[4])
+    for i in a:
+        for j in op:
+            for k in b:
+                for m in ans:
+                    if check(int(i), j, int(k), int(m)):
+                        print(f'{i} {j} {k} = {m}')
+                        return
+    print('WRONG PROBLEM!')
+for case in range(int(input())):
+    solve(input())

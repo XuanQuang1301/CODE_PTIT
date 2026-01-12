@@ -10,5 +10,3 @@ for case in range(int(input())):
     intersection = len(set_x & set_y)
     union = len(set_x | set_y)
     print(f"{(intersection / union):.5f}")
-
-

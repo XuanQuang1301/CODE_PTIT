@@ -1,4 +1,4 @@
-f = open('DATA.in', 'r')
+f = open('DATA2.in', 'r')
 a = []
 for line in f:
     for j in line.split():

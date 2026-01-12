@@ -1,4 +1,6 @@
 import math
+import sys
+data = sys.stdin.readline()
 
 for case in range(int(input())):
     a = [int(x) for x in input().split()]

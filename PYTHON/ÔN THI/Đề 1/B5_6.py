@@ -19,7 +19,6 @@ def check(n):
     return res
 n = int(input())
 arr = [int(x) for x in input().split()]
-
 # Đếm tần suất xuất hiện của các radical
 fred = {}
 # Dùng cache để không phải tính lại radical cho các số giống nhau

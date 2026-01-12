@@ -14,6 +14,6 @@ for i in range(n):
                 ok = False
                 break
         elif arr[i][j] != arr[j][i]:
-            ok = False
+            ok = Falseaaaa
             break
 print("YES" if ok else "NO")

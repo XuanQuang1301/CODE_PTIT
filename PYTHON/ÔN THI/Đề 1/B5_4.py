@@ -1,41 +1,36 @@
-def Try(many, k):
-    if k <= 2:
-        if many < 1000000000:
-            return 2.5
-        elif many <= 3000000000:
-            return 2.7
-        else:
-            return 2.8
-    elif k <= 6:
-        if many < 1000000000:
-            return 3.9
-        elif many <= 3000000000:
-            return 4.1
-        else:
-            return 4.3
-    elif k <= 12:
-        if many < 1000000000:
-            return 4.8
-        elif many <= 3000000000:
-            return 4.9
-        else:
-            return 5.0
-    elif k <= 36:
-        if many < 1000000000:
-            return 4.8
-        elif many <= 3000000000:
-            return 5.0
-        else:
-            return 5.1
+def get_interest_rate(amount, months):
+    # Xác định mức tiền gửi
+    if amount < 1_000_000_000:
+        tier = 0
+    elif amount < 3_000_000_000:
+        tier = 1
     else:
-        if many < 1000000000:
-            return 4.7
-        elif many <= 3000000000:
-            return 4.9
-        else:
-            return 5.0
+        tier = 2
 
-many = int(input())
-k = int(input())
-sum = many * (Try(many, k) / 12) * k
-print(sum)
+    # Chọn mức lãi suất theo kỳ hạn
+    if 1 <= months <= 2:
+        rates = [2.5, 2.7, 2.8]
+    elif 3 <= months <= 6:
+        rates = [3.9, 4.1, 4.3]
+    elif 7 <= months <= 12:
+        rates = [4.8, 4.9, 5.0]
+    elif 13 <= months <= 36:
+        rates = [5.0, 4.8, 4.9]
+    else:  # > 36 tháng
+        rates = [5.1, 4.7, 5.0]
+
+    return rates[tier]
+
+
+def calc_interest():
+    amount = int(input().strip())
+    months = int(input().strip())
+
+    rate = get_interest_rate(amount, months)
+    interest = amount * (rate / 100) / 12 * months
+
+    print(int(interest))
+
+
+# Chạy chương trình
+calc_interest()
